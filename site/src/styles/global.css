@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-numeric: "Anton", "Space Grotesk", system-ui, sans-serif;
+}
+
+html, body {
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display { font-family: var(--font-display); letter-spacing: -0.02em; }
+.font-numeric { font-family: var(--font-numeric); letter-spacing: 0.01em; }
+
+.text-3d-chrome {
+  background: linear-gradient(180deg, #ffffff 0%, #e5e7eb 45%, #ffffff 55%, #9ca3af 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.4),
+    0 2px 0 rgba(0,0,0,0.15),
+    0 6px 12px rgba(0,0,0,0.45),
+    0 12px 28px rgba(0,0,0,0.3);
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.35));
+}
+
+.text-3d-red {
+  background: linear-gradient(180deg, #fecaca 0%, #ef4444 50%, #b91c1c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.25),
+    0 2px 0 rgba(127,29,29,0.6),
+    0 8px 14px rgba(220,38,38,0.45),
+    0 14px 30px rgba(0,0,0,0.4);
+}
+
+.text-3d-stat {
+  background: linear-gradient(180deg, #fff5f5 0%, #fca5a5 35%, #dc2626 60%, #7f1d1d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.3),
+    0 3px 6px rgba(0,0,0,0.4),
+    0 8px 24px rgba(220,38,38,0.35);
+}
+
+.text-engraved {
+  color: #0a0a0a;
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.55),
+    0 -1px 0 rgba(0,0,0,0.45);
+}
+
+.heading-stroke {
+  -webkit-text-stroke: 1px rgba(255,255,255,0.08);
+}
+
+/* ─── Editorial / Magazine utilities ─── */
+.text-stroke-cream {
+  -webkit-text-stroke: 1px rgba(250, 245, 235, 0.18);
+  color: transparent;
+}
+.text-stroke-ink {
+  -webkit-text-stroke: 1px rgba(15, 15, 17, 0.32);
+  color: transparent;
+}
+
+.drop-cap::first-letter {
+  font-family: var(--font-numeric);
+  float: left;
+  font-size: 5.5rem;
+  line-height: 0.85;
+  padding: 0.4rem 0.6rem 0 0;
+  color: #dc2626;
+  font-weight: 400;
+  text-shadow: 0 2px 0 rgba(127,29,29,0.4);
+}
+@media (min-width: 640px) {
+  .drop-cap::first-letter { font-size: 7rem; padding: 0.55rem 0.85rem 0 0; }
+}
+
+.editorial-rule {
+  background-image: linear-gradient(90deg, currentColor 50%, transparent 50%);
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
+  background-position: 0 50%;
+  height: 1px;
+}
+
+.diagonal-stripes {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(220, 38, 38, 0.08) 0,
+    rgba(220, 38, 38, 0.08) 1px,
+    transparent 1px,
+    transparent 9px
+  );
+}
+
+.grain {
+  position: relative;
+}
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+}
+
+.photo-frame {
+  position: relative;
+  overflow: hidden;
+}
+.photo-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.55) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+
+.team-card-img {
+  filter: grayscale(0.45) contrast(1.05) brightness(0.92);
+  transition: filter 0.6s ease, transform 0.8s ease;
+}
+.team-card:hover .team-card-img,
+.team-card:focus-within .team-card-img {
+  filter: grayscale(0) contrast(1.08) brightness(1);
+  transform: scale(1.03);
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-ticker {
+  animation: ticker 38s linear infinite;
+}

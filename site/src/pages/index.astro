@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSlider from '../components/HeroSlider.astro';
+import LocationBanner from '../components/LocationBanner.astro';
+import UspGrid from '../components/UspGrid.astro';
+import PhotoMarquee from '../components/PhotoMarquee.astro';
+import InstagramReels from '../components/InstagramReels.astro';
+import ReviewsSlider from '../components/ReviewsSlider.astro';
+import business from '../data/business.json';
+
+const waUrl = `https://wa.me/${business.whatsapp.replace('+','')}?text=${encodeURIComponent(business.whatsappMessage)}`;
+---
+<BaseLayout title={`${business.h1Name} — Oto Ekspertiz Merkezi · TSE Belgeli · UV Boya Tespit`}>
+
+  <HeroSlider />
+
+  <LocationBanner />
+
+  <section class="relative bg-zinc-950 text-white border-y border-zinc-800 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(220,38,38,0.12),_transparent_70%)] pointer-events-none"></div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-14 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div>
+        <div class="font-numeric text-5xl sm:text-6xl lg:text-7xl text-3d-stat leading-none">{business.stats.stars.toFixed(1)}<span class="text-yellow-400 ml-1" style="text-shadow: 0 2px 8px rgba(250,204,21,0.6), 0 4px 14px rgba(0,0,0,0.5);">★</span></div>
+        <div class="font-display text-[11px] sm:text-xs text-zinc-300 mt-3 uppercase tracking-[0.2em] font-semibold">Google Puanı</div>
+      </div>
+      <div>
+        <div class="font-numeric text-5xl sm:text-6xl lg:text-7xl text-3d-stat leading-none">{business.stats.reviews}<span class="text-red-400">+</span></div>
+        <div class="font-display text-[11px] sm:text-xs text-zinc-300 mt-3 uppercase tracking-[0.2em] font-semibold">Müşteri Yorumu</div>
+      </div>
+      <div>
+        <div class="font-numeric text-5xl sm:text-6xl lg:text-7xl text-3d-stat leading-none">{business.stats.checkpoints}</div>
+        <div class="font-display text-[11px] sm:text-xs text-zinc-300 mt-3 uppercase tracking-[0.2em] font-semibold">Kontrol Noktası</div>
+      </div>
+      <div>
+        <div class="font-numeric text-5xl sm:text-6xl lg:text-7xl text-3d-chrome leading-none">TSE</div>
+        <div class="font-display text-[11px] sm:text-xs text-zinc-300 mt-3 uppercase tracking-[0.2em] font-semibold">Belgeli Rapor</div>
+      </div>
+    </div>
+  </section>
+
+  <UspGrid />
+
+  <PhotoMarquee />
+
+  <InstagramReels />
+
+  <ReviewsSlider />
+
+  <section class="bg-gradient-to-br from-red-600 to-red-800 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-20 text-center">
+      <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tighter leading-[0.95] text-3d-chrome">Aracınızı %100 Güvenceye Alın</h2>
+      <p class="mt-5 text-red-100 text-lg sm:text-xl" style="text-shadow: 0 1px 2px rgba(0,0,0,0.3);">Hemen randevu alın, 5. noterin karşısında sizi bekliyoruz.</p>
+      <div class="mt-8 flex flex-col sm:flex-row justify-center gap-3">
+        <a href={`tel:${business.phoneE164}`} class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-red-700 hover:bg-red-50 font-semibold rounded-md transition-colors shadow-lg">
+          📞 {business.phone}
+        </a>
+        <a href={waUrl} target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-md transition-colors shadow-lg">
+          💬 WhatsApp ile Yaz
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

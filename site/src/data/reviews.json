@@ -1,0 +1,26 @@
+{
+  "_note": "Şu an placeholder yorumlar — GMB'den gerçekleriyle değiştirilecek (memory'deki açık konu).",
+  "reviews": [
+    {
+      "name": "M. Karaca",
+      "date": "2026-04-12",
+      "rating": 5,
+      "text": "Aracımı almadan önce buradan ekspertiz yaptırdım. Mor ışık altında boya kontrolü yapmaları çok etkileyici. Sıfır gibi göründüğünü düşündüğüm araçta boya çıktı, alımdan vazgeçtim. Çok teşekkür ederim.",
+      "source": "google"
+    },
+    {
+      "name": "A. Yılmaz",
+      "date": "2026-04-03",
+      "rating": 5,
+      "text": "5. noter karşısında olmaları büyük avantaj. Ekspertiz bitince hemen notere gidip aracı devraldım. Personel çok ilgili, rapor detaylı ve net. Tavsiye ederim.",
+      "source": "google"
+    },
+    {
+      "name": "S. Demir",
+      "date": "2026-03-28",
+      "rating": 5,
+      "text": "Black Box paketini aldım. 648 noktanın hepsi tek tek kontrol edildi. Motor, kaporta, elektronik her şey incelendi. Bu kadar detaylı rapor başka yerde görmedim.",
+      "source": "google"
+    }
+  ]
+}

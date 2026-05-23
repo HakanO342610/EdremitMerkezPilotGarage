@@ -1,0 +1,53 @@
+---
+const atolye = Array.from({ length: 15 }, (_, i) => `/gallery/atolye-${String(i + 1).padStart(2, '0')}.jpg`);
+const ekspertiz = Array.from({ length: 10 }, (_, i) => `/gallery/ekspertiz-${String(i + 1).padStart(2, '0')}.jpg`);
+const ekip = Array.from({ length: 5 }, (_, i) => `/gallery/ekip-${String(i + 1).padStart(2, '0')}.jpg`);
+
+const row1 = [...atolye.slice(0, 8), ...ekspertiz.slice(0, 4)];
+const row2 = [...ekspertiz.slice(4, 10), ...atolye.slice(8, 15), ...ekip];
+
+const doubled1 = [...row1, ...row1];
+const doubled2 = [...row2, ...row2];
+---
+<section class="bg-white py-16 sm:py-20 overflow-hidden">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 mb-10">
+    <div class="text-center max-w-2xl mx-auto">
+      <div class="inline-block px-3 py-1 bg-zinc-100 text-zinc-700 text-xs font-bold uppercase tracking-wider rounded-full">📸 Galeri</div>
+      <h2 class="text-3xl sm:text-4xl font-bold text-zinc-900 mt-3">İşletmemizden Kareler</h2>
+      <p class="mt-2 text-zinc-600">Atölyemiz, ekipmanlarımız ve ekibimizden gerçek görüntüler.</p>
+    </div>
+  </div>
+
+  <div class="marquee-row marquee-row-1 flex gap-4 w-max mb-4">
+    {doubled1.map((src, idx) => (
+      <div class="marquee-item flex-shrink-0 w-[240px] sm:w-[300px] lg:w-[340px] aspect-[4/3] rounded-xl overflow-hidden bg-zinc-100 shadow-md ring-1 ring-zinc-200">
+        <img src={src} alt="Edremit Merkez Pilot Garage atölye/ekspertiz görüntüsü" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+      </div>
+    ))}
+  </div>
+
+  <div class="marquee-row marquee-row-2 flex gap-4 w-max">
+    {doubled2.map((src, idx) => (
+      <div class="marquee-item flex-shrink-0 w-[240px] sm:w-[300px] lg:w-[340px] aspect-[4/3] rounded-xl overflow-hidden bg-zinc-100 shadow-md ring-1 ring-zinc-200">
+        <img src={src} alt="Edremit Merkez Pilot Garage ekipman/ekip görüntüsü" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .marquee-row { animation: marquee-left 60s linear infinite; }
+  .marquee-row-2 { animation: marquee-right 65s linear infinite; }
+  section:hover .marquee-row { animation-play-state: paused; }
+  @keyframes marquee-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes marquee-right {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-row, .marquee-row-2 { animation: none; }
+  }
+</style>

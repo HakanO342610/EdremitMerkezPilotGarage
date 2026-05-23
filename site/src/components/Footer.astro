@@ -1,0 +1,84 @@
+---
+import business from '../data/business.json';
+import SocialIcons from './SocialIcons.astro';
+
+const year = new Date().getFullYear();
+const nav = [
+  { href: '/', label: 'Anasayfa' },
+  { href: '/paketler', label: 'Paketler & Fiyatlar' },
+  { href: '/hakkimizda', label: 'Hakkımızda' },
+  { href: '/iletisim', label: 'İletişim' },
+];
+---
+<footer class="bg-zinc-900 text-zinc-300 mt-0">
+  <div class="bg-gradient-to-r from-red-700 to-red-600 text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm">
+      <div class="flex items-center gap-2 font-semibold">
+        📍 Edremit 5. Noterliği Karşısı · Sıra beklemeden 1 dakika mesafede
+      </div>
+      <a href={business.googleMapsUrl} target="_blank" rel="noopener" class="text-white/90 hover:text-white font-semibold underline-offset-2 hover:underline text-xs sm:text-sm">
+        Yol Tarifi Al →
+      </a>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div class="lg:col-span-1">
+      <div class="flex items-center gap-3 mb-3">
+        <img src="/images/logo.jpeg" alt="" class="h-12 w-12 rounded-md object-cover" width="48" height="48" />
+        <div class="font-bold text-white text-lg leading-tight">{business.name}</div>
+      </div>
+      <p class="text-sm leading-relaxed text-zinc-400">{business.shortDescription}</p>
+      <div class="mt-4 flex flex-wrap gap-1.5">
+        {business.certifications.map(c => (
+          <span class="text-xs px-2 py-0.5 bg-green-900/40 text-green-300 rounded border border-green-800">✓ {c}</span>
+        ))}
+        <span class="text-xs px-2 py-0.5 bg-purple-900/40 text-purple-300 rounded border border-purple-800">✓ UV Boya Tespit</span>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-white font-semibold mb-3 text-sm uppercase tracking-wider">Hızlı Bağlantılar</h3>
+      <ul class="space-y-2 text-sm">
+        {nav.map(item => (
+          <li><a href={item.href} class="text-zinc-400 hover:text-white transition-colors">{item.label}</a></li>
+        ))}
+      </ul>
+      <h3 class="text-white font-semibold mt-6 mb-3 text-sm uppercase tracking-wider">Sosyal Medya</h3>
+      <SocialIcons size="sm" variant="light" />
+    </div>
+
+    <div>
+      <h3 class="text-white font-semibold mb-3 text-sm uppercase tracking-wider">İletişim</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href={`tel:${business.phoneE164}`} class="text-zinc-400 hover:text-red-400 transition-colors">📞 {business.phone}</a></li>
+        <li><a href={`https://wa.me/${business.whatsapp.replace('+','')}?text=${encodeURIComponent(business.whatsappMessage)}`} target="_blank" rel="noopener" class="text-zinc-400 hover:text-green-400 transition-colors">💬 WhatsApp</a></li>
+        <li><a href={`mailto:${business.email}`} class="text-zinc-400 hover:text-red-400 transition-colors break-all">✉ {business.email}</a></li>
+        <li><a href={business.googleMapsUrl} target="_blank" rel="noopener" class="text-zinc-400 hover:text-red-400 transition-colors">📍 {business.addressLine}</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-semibold mb-3 text-sm uppercase tracking-wider">Çalışma Saatleri</h3>
+      <ul class="space-y-1 text-sm text-zinc-400">
+        <li class="flex justify-between"><span>Pazartesi - Cumartesi</span><span class="text-white">08:30 - 18:30</span></li>
+        <li class="flex justify-between text-zinc-500"><span>Pazar</span><span>Kapalı</span></li>
+      </ul>
+      <div class="mt-5 p-3 bg-zinc-800/60 rounded-lg border border-zinc-700">
+        <div class="flex items-center gap-1.5">
+          <span class="text-yellow-400">★★★★★</span>
+          <span class="text-sm font-bold text-white">{business.rating.value.toFixed(1)}</span>
+          <span class="text-xs text-zinc-400">({business.rating.count}+ yorum)</span>
+        </div>
+        <a href={business.googleReviewsUrl} target="_blank" rel="noopener" class="block mt-2 text-xs text-red-400 hover:text-red-300 transition-colors">Google'da Tüm Yorumlar →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-zinc-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 text-xs text-zinc-500 flex flex-col sm:flex-row sm:justify-between gap-1">
+      <span>© {year} {business.name} · Tüm hakları saklıdır.</span>
+      <span>Yasal İşletme Sahibi: {business.legalName}</span>
+    </div>
+  </div>
+</footer>

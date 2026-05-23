@@ -1,0 +1,180 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import business from '../data/business.json';
+
+const waUrl = `https://wa.me/${business.whatsapp.replace('+','')}?text=${encodeURIComponent(business.whatsappMessage)}`;
+
+const values = [
+  {
+    icon: 'eye',
+    title: 'Şeffaflık',
+    text: 'Müşteriden veri saklamayız. Aracın iyi ve kötü her bulgusu raporda yer alır. Fotoğraflı kanıt, ölçüm değerleri ve net sonuç — hepsi elinizde.',
+  },
+  {
+    icon: 'shield',
+    title: 'Bağımsızlık',
+    text: 'Alıcı, satıcı veya galeri adına çalışmıyoruz. Tek müşterimiz incelediğimiz araç ve sahibi. Tarafsız rapor, dürüst sonuç.',
+  },
+  {
+    icon: 'award',
+    title: 'Teknik Yeterlilik',
+    text: 'TSE belgeli süreç, MEB ustalık belgeli teknisyen, kalibreli cihaz altyapısı. Yetkili servis tecrübeli ekiple çalışıyoruz.',
+  },
+  {
+    icon: 'check',
+    title: 'Sözünün Eri',
+    text: 'Verdiğimiz rapora itiraz olursa belgeyle açıklarız. Yanlış bir bulgu çıkarsa düzeltir, sorumluluğu üstleniriz.',
+  },
+  {
+    icon: 'spark',
+    title: 'Sürekli Gelişim',
+    text: 'Yeni cihazlar, marka eğitimleri ve güncel protokoller — kendimizi sürekli yenileriz. 2024\'te alınan Toyota kaporta eğitimi en yeni örnek.',
+  },
+];
+
+const iconPaths = {
+  eye:    'M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7zM15 12a3 3 0 11-6 0 3 3 0 016 0z',
+  shield: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+  award:  'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z',
+  check:  'M5 13l4 4L19 7',
+  spark:  'M13 10V3L4 14h7v7l9-11h-7z',
+};
+---
+<BaseLayout title="Değerlerimiz — Misyon & Vizyon" description="Edremit Merkez Pilot Garage'in misyonu, vizyonu ve çalışma değerleri. Şeffaflık, bağımsızlık, teknik yeterlilik ve sözünün eri olma — günlük çalışma normlarımız.">
+
+  {/* HERO — sade kurumsal */}
+  <section class="bg-white border-b border-zinc-200">
+    <div class="max-w-6xl mx-auto px-6 py-14 sm:py-20">
+      <div class="text-[11px] uppercase tracking-[0.22em] text-red-600 font-semibold mb-3">Değerlerimiz</div>
+      <h1 class="font-display text-3xl sm:text-5xl font-bold text-zinc-900 tracking-tight leading-tight">
+        Reklam değil, <span class="text-red-600">günlük çalışma normumuz</span>.
+      </h1>
+      <p class="mt-5 text-base sm:text-lg text-zinc-600 max-w-3xl leading-relaxed">
+        Edremit Merkez Pilot Garage'in misyonu, vizyonu ve günlük işine sindirdiği prensipler. Aracınızı bize getirdiğinizde — atölyenin arkasında bu değerler var.
+      </p>
+    </div>
+  </section>
+
+  {/* MİSYON + VİZYON — yan yana iki büyük kart */}
+  <section class="bg-stone-50 border-b border-zinc-200">
+    <div class="max-w-6xl mx-auto px-6 py-14 sm:py-20">
+      <div class="grid md:grid-cols-2 gap-5 sm:gap-6">
+
+        {/* Misyon */}
+        <article class="bg-white border border-zinc-200 rounded p-7 sm:p-9 shadow-sm">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 bg-red-600 text-white rounded flex items-center justify-center font-display font-bold text-sm">M</div>
+            <div class="text-[11px] uppercase tracking-[0.22em] text-red-600 font-semibold">Misyon</div>
+          </div>
+          <h2 class="font-display text-2xl sm:text-3xl font-bold text-zinc-900 leading-tight tracking-tight">
+            Aracın gerçek durumunu net bir raporla anlatmak.
+          </h2>
+          <p class="mt-5 text-base text-zinc-700 leading-relaxed">
+            İkinci el araç alım-satım sürecinde alıcının ve satıcının güvenli karar verebilmesi için aracın
+            gerçek durumunu eksiksiz, tarafsız ve teknik olarak raporlamak. Her müşterimize verdiğimiz
+            raporun arkasında durmak, hatalı bir bulgu çıkarsa düzeltmek.
+          </p>
+          <div class="mt-6 pt-5 border-t border-zinc-200 text-sm text-zinc-600 leading-relaxed">
+            Bizim için ekspertiz; bir araç testi değil, iki insanın güveninin tutuşturulduğu zincirin son halkasıdır.
+          </div>
+        </article>
+
+        {/* Vizyon */}
+        <article class="bg-zinc-900 text-white rounded p-7 sm:p-9 shadow-lg relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-red-600 opacity-10 rounded-full -translate-y-1/3 translate-x-1/3"></div>
+          <div class="relative">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-10 h-10 bg-red-600 text-white rounded flex items-center justify-center font-display font-bold text-sm">V</div>
+              <div class="text-[11px] uppercase tracking-[0.22em] text-red-400 font-semibold">Vizyon</div>
+            </div>
+            <h2 class="font-display text-2xl sm:text-3xl font-bold text-white leading-tight tracking-tight">
+              Edremit körfezinin referans noktası olmak.
+            </h2>
+            <p class="mt-5 text-base text-zinc-300 leading-relaxed">
+              Edremit ve körfez bölgesinin en güvenilir, en yüksek puanlı oto ekspertiz merkezi olmak.
+              TSE belgeli kalite standardını bir reklam değil, günlük çalışma normu olarak yaşatmak;
+              sektörde dürüst rapor kültürünün öncüsü olmak.
+            </p>
+            <div class="mt-6 pt-5 border-t border-zinc-700 text-sm text-zinc-400 leading-relaxed">
+              Bugün 5.0 yıldız, 400+ yorum. Yarın bölgenin standart belirleyicisi olmak.
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  {/* DEĞERLERİMİZ — 5 prensip */}
+  <section class="bg-white border-b border-zinc-200">
+    <div class="max-w-6xl mx-auto px-6 py-14 sm:py-20">
+      <div class="max-w-3xl mb-10 sm:mb-14">
+        <div class="text-[11px] uppercase tracking-[0.22em] text-red-600 font-semibold mb-3">Çalışma Prensiplerimiz</div>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-zinc-900 tracking-tight leading-tight">
+          Her gün uyguladığımız <span class="text-red-600">5 ilke</span>.
+        </h2>
+        <p class="mt-4 text-zinc-600 leading-relaxed">
+          Bu prensipler bir broşürde değil — atölyemizde, raporlarımızda ve müşterimizle yaptığımız her görüşmede yaşar.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        {values.map((v, i) => (
+          <article class="relative bg-stone-50 border border-zinc-200 rounded p-6 hover:border-red-300 hover:shadow-md transition-all">
+            <div class="absolute top-0 right-0 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-zinc-400 font-semibold font-numeric">
+              0{i+1}
+            </div>
+            <div class="w-11 h-11 bg-red-600 text-white rounded flex items-center justify-center mb-4 shadow-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d={iconPaths[v.icon]} />
+              </svg>
+            </div>
+            <h3 class="font-display text-lg sm:text-xl font-bold text-zinc-900 tracking-tight">{v.title}</h3>
+            <p class="mt-2 text-sm sm:text-base text-zinc-600 leading-relaxed">{v.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* TSE GÜVEN ŞERİDİ — kısa vurgu */}
+  <section class="bg-red-600 text-white">
+    <div class="max-w-6xl mx-auto px-6 py-10 sm:py-12">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-8">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-white text-red-600 rounded flex items-center justify-center font-display font-bold text-lg shrink-0">
+            TSE
+          </div>
+          <div>
+            <div class="font-display text-lg sm:text-xl font-bold">Türk Standartları Enstitüsü Belgeli</div>
+            <div class="text-sm text-red-100 mt-0.5">Resmî, geçerli, denetlenmiş ekspertiz süreci.</div>
+          </div>
+        </div>
+        <a href="/ekibimiz" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-red-700 hover:bg-zinc-100 font-semibold text-sm rounded transition-colors shrink-0">
+          Ekibimizi Tanıyın
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* CTA — sade */}
+  <section class="bg-zinc-50">
+    <div class="max-w-4xl mx-auto px-6 py-14 sm:py-16 text-center">
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-zinc-900">Aracınız için randevu oluşturmak ister misiniz?</h2>
+      <p class="mt-3 text-zinc-600">Telefon veya WhatsApp üzerinden bize ulaşın — değerlerimizin uygulamasını gelin görün.</p>
+      <div class="mt-7 flex flex-col sm:flex-row justify-center gap-3 max-w-md mx-auto">
+        <a href={`tel:${business.phoneE164}`} class="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded transition-colors">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+          {business.phone}
+        </a>
+        <a href={waUrl} target="_blank" rel="noopener" class="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded transition-colors">
+          WhatsApp ile Yaz
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,87 @@
+{
+  "note": "Fiyatlar bayilerimizde değişiklik gösterebilir. Detaylı bilgi için arayın.",
+  "source": "ekspertizedremit.com/fiyat-listesi.html (Edremit bayisi resmi fiyat listesi, 23 May 2026)",
+  "packages": [
+    {
+      "id": "black-box",
+      "name": "BLACK BOX",
+      "price": "13.500",
+      "tagline": "648 Nokta Detaylı İnceleme",
+      "description": "Satın almak istediği aracın her aksamıyla alakalı ayrıntılı bilgi sahibi olmak isteyen alıcılara özel, aracın tam 648 noktası hakkında bilgi sunan en kapsamlı paket.",
+      "featured": true,
+      "features": [
+        "(50) Mekanik Alt Kontrolleri",
+        "(19) Motor Mekanik Kontrolleri",
+        "(21) Süspansiyon Test Sonucu",
+        "(10) Fren Test Sonucu",
+        "(79) İç Donanım Kontrol",
+        "(54) Lastik Kontrolleri",
+        "(37) Dış Gövde Bileşen Kontrolleri",
+        "DYNO Motor Performans + OBD Elektronik",
+        "Blok Çatlak + Conta Yanık Testi",
+        "Broscope Kamera"
+      ]
+    },
+    {
+      "id": "first-class",
+      "name": "FIRST CLASS",
+      "price": "9.500",
+      "tagline": "320 Nokta Premium İnceleme",
+      "description": "Mekanik alt grup, motor, süspansiyon ve iç-dış kozmetik kontrol dahil premium paket.",
+      "features": [
+        "(52) Mekanik Alt Kontrolleri",
+        "(19) Motor Mekanik Kontrolleri",
+        "(21) Süspansiyon Test Sonucu",
+        "(35) İç Kozmetik Kontrol",
+        "(27) Dış Aydınlatma Kontrol",
+        "(30) Lastik Kontrolleri",
+        "DYNO Motor Performans + OBD"
+      ]
+    },
+    {
+      "id": "business-class",
+      "name": "BUSINESS CLASS",
+      "price": "8.000",
+      "tagline": "220 Nokta Orta-Üst Seviye",
+      "description": "Motor mekanik, alt grup, fren ve süspansiyon kontrolü dahil dengeli kapsam.",
+      "popular": true,
+      "features": [
+        "(32) Mekanik Alt Kontrolleri",
+        "(19) Motor Mekanik Kontrolleri",
+        "(11) Süspansiyon Test Sonucu",
+        "(28) Lastik Kontrolleri",
+        "(15) Dış Aydınlatma Kontrol",
+        "DYNO Motor Performans + OBD",
+        "Boya Kaporta Kontrol"
+      ]
+    },
+    {
+      "id": "bold-class",
+      "name": "BOLD CLASS",
+      "price": "6.500",
+      "tagline": "151 Nokta Temel Kontrol",
+      "description": "Motor mekanik, fren, lastik ve boya kaporta odaklı temel ekspertiz paketi.",
+      "features": [
+        "(20) Motor Mekanik Kontrolleri",
+        "(10) Mekanik Alt Kontrolleri",
+        "(10) Fren Test Sonucu",
+        "(22) İç Kozmetik Kontrol",
+        "(28) Boya Kaporta Kontrol",
+        "(13) Lastik Kontrolleri",
+        "DYNO Motor Performans"
+      ]
+    }
+  ],
+  "addOns": [
+    { "name": "Airbag Kontrol", "price": "4.000" },
+    { "name": "Şase Kontrol", "price": "10.000" },
+    { "name": "Motor Numarası Kontrol", "price": "13.000" },
+    { "name": "OBD Cihaz Sorgulama", "price": "2.000" },
+    { "name": "Conta Yanık Testi", "price": "1.750" },
+    { "name": "Blok Çatlak ve Aşınma Testi", "price": "1.750" },
+    { "name": "Broscope Kamera", "price": "1.500" },
+    { "name": "Tramer-KM Sorgulama", "price": "800" },
+    { "name": "Tek Sorgulama (her değişen için)", "price": "500" },
+    { "name": "Pakete Ek 4x4 DYNO Test", "price": "1.500" }
+  ]
+}

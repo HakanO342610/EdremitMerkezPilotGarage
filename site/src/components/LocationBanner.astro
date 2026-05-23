@@ -1,0 +1,26 @@
+---
+import business from '../data/business.json';
+---
+<section class="relative overflow-hidden bg-gradient-to-r from-red-700 via-red-600 to-red-700 text-white">
+  <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, white 0%, transparent 50%), radial-gradient(circle at 80% 50%, white 0%, transparent 50%);"></div>
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8 flex flex-col md:flex-row items-center justify-between gap-5">
+    <div class="flex items-center gap-4 sm:gap-5">
+      <div class="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 bg-white/15 backdrop-blur rounded-full flex items-center justify-center border border-white/30 ring-4 ring-white/10">
+        <svg class="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C7.802 0 4.4 3.403 4.4 7.602 4.4 11.8 7.0 16.5 12 24c5-7.5 7.6-12.2 7.6-16.398C19.6 3.403 16.198 0 12 0zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
+      </div>
+      <div>
+        <div class="text-xs uppercase tracking-wider font-semibold text-red-100">📍 Konumumuz</div>
+        <div class="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight">Edremit 5. Noterliği Karşısı</div>
+        <div class="text-sm sm:text-base text-red-100 mt-1">Sıra beklemeden, sadece <strong class="text-white">1 dakika mesafede</strong> notere ulaşın</div>
+      </div>
+    </div>
+    <a
+      href={business.googleMapsUrl}
+      target="_blank"
+      rel="noopener"
+      class="flex-shrink-0 inline-flex items-center gap-2 px-5 py-3 bg-white text-red-700 hover:bg-red-50 font-bold rounded-md transition-colors shadow-lg whitespace-nowrap"
+    >
+      🧭 Yol Tarifi Al
+    </a>
+  </div>
+</section>

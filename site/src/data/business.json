@@ -1,0 +1,166 @@
+{
+  "name": "Edremit Merkez Pilot Garage",
+  "brand": "Edremit Merkez Pilot Garage",
+  "h1Name": "Pilot Garage Edremit",
+  "branchLabel": "MERKEZ ŞUBESİ",
+  "legalName": "Nadir Bilgen",
+  "tagline": "Edremit'in Güvenilir Oto Ekspertiz Merkezi",
+  "shortDescription": "TSE belgeli, 648 nokta inceleme. UV boya altı tespit ışığı sadece bizde. Edremit 5. Noterliği karşısı, 1 dakika mesafe. 5.0 yıldız, 400+ yorum.",
+  "phone": "0532 306 30 10",
+  "phoneE164": "+905323063010",
+  "whatsapp": "+905323063010",
+  "whatsappMessage": "Arabama eksper yaptırmak istiyorum",
+  "email": "pilotgarageedremit@gmail.com",
+  "addressLine": "Edremit 5. Noterliği Karşısı",
+  "city": "Edremit",
+  "region": "Balıkesir",
+  "country": "TR",
+  "geo": {
+    "latitude": 39.5957109,
+    "longitude": 27.0123726
+  },
+  "googleMapsUrl": "https://www.google.com/maps/place/Edremit+Pilot+Garage+Merkez+Oto+Ekspertiz/@39.5957109,27.0123726,17z/data=!3m1!4b1!4m6!3m5!1s0x14b0c908d6128019:0x77cdb0b25bdd6fa5!8m2!3d39.5957109!4d27.0123726!16s%2Fg%2F11xvphpww6",
+  "googleMapsShortUrl": "https://share.google/6bwn76SlNJmQpAaHw",
+  "googleReviewsUrl": "https://share.google/6bwn76SlNJmQpAaHw",
+  "googleMapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1547.5!2d27.0123726!3d39.5957109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b0c908d6128019%3A0x77cdb0b25bdd6fa5!2sEdremit%20Pilot%20Garage%20Merkez%20Oto%20Ekspertiz!5e0!3m2!1str!2str!4v1747817000000",
+  "social": {
+    "instagram": "https://www.instagram.com/pilot.garage.edremit.merkez/",
+    "youtube": "https://www.youtube.com/@pilotgarageotoekspertizedremit"
+  },
+  "openingHours": [
+    {"days": ["Mo","Tu","We","Th","Fr","Sa"], "opens": "08:30", "closes": "18:30"}
+  ],
+  "certifications": ["TSE Belgeli"],
+  "stats": {
+    "stars": 5.0,
+    "reviews": 400,
+    "years": 12,
+    "checkpoints": 648
+  },
+  "slogans": [
+    {
+      "title": "Doğru Karar, Net Rapor",
+      "subtitle": "Tarafsız ve teknolojik araç ekspertizi — Edremit'te güvenle araç alın ve satın.",
+      "image": "/images/slider/01-atolye.jpg"
+    },
+    {
+      "title": "5. Noter Karşısı, Sıra Beklemeden",
+      "subtitle": "Notere sadece 1 dakika mesafede, gün içinde işlerinizi hızla halledin.",
+      "image": "/images/slider/02-ic-mekan.jpg"
+    },
+    {
+      "title": "TSE Belgeli, 648 Nokta İnceleme",
+      "subtitle": "UV boya altı tespit ışığı dahil — sadece bizim merkezimizde, en kapsamlı ekspertiz.",
+      "image": "/images/slider/03-ekip.jpg"
+    }
+  ],
+  "usps": [
+    {
+      "id": "uv-light",
+      "title": "UV Boya Altı Tespit Işığı",
+      "description": "Gözle görülmeyen boya ve onarım izlerini mor (UV) ışık altında nokta atışı tespit ediyoruz. Bölgede sadece bizde olan teknoloji.",
+      "badge": "BÖLGEDE SADECE BİZDE",
+      "icon": "uv",
+      "featured": true
+    },
+    {
+      "id": "tse",
+      "title": "TSE Belgeli Rapor",
+      "description": "Türk Standartları Enstitüsü onaylı, resmî geçerli ekspertiz raporu.",
+      "icon": "shield"
+    },
+    {
+      "id": "checkpoints",
+      "title": "648 Nokta İnceleme",
+      "description": "Black Box paketimizde aracın 648 ayrı noktası tek tek kontrol edilir.",
+      "icon": "checklist"
+    },
+    {
+      "id": "rating",
+      "title": "5.0 Yıldız · 400+ Yorum",
+      "description": "Google'da bölgenin en yüksek puanlı oto ekspertiz merkezi.",
+      "icon": "star"
+    },
+    {
+      "id": "noter",
+      "title": "5. Noter Karşısı",
+      "description": "Edremit 5. Noterliği'nin tam karşısında, sıra beklemeden 1 dakika mesafe.",
+      "icon": "map"
+    },
+    {
+      "id": "modern",
+      "title": "Modern Cihazlar",
+      "description": "Dyno motor performans, OBD elektronik tarama, fren test cihazı ve daha fazlası.",
+      "icon": "wrench"
+    }
+  ],
+  "keyEquipment": [
+    "UV Boya Altı Tespit Işığı",
+    "Dyno Motor Performans Cihazı",
+    "OBD Elektronik Tarama",
+    "Profesyonel Fren Test Cihazı",
+    "Süspansiyon Test Platformu",
+    "Termal Görüntüleme"
+  ],
+  "rating": {
+    "value": 5.0,
+    "count": 400
+  },
+  "trustBadges": [
+    "TSE Güvenilir Rapor",
+    "5.0 Yıldız Google Puanı",
+    "400+ Müşteri Yorumu",
+    "UV Boya Altı Tespit Işığı",
+    "Garantili Şeffaf Rapor",
+    "5. Noter Karşısı"
+  ],
+  "callouts": [
+    "En İyi Ekspertiz",
+    "Edremit Oto Eksper",
+    "Notere Çok Yakınız",
+    "En İyi Fiyat Garantisi",
+    "TSE Güvenilir Rapor"
+  ],
+  "team": [
+    {
+      "name": "Kazım TÜRKER",
+      "role": "Usta · Motor · Kaporta & Onarım",
+      "bio": "Otomotiv sektöründe uzun yıllar ustalık yapmış, tecrübeli bir ustamız. Toyota ve Volkswagen yetkili servislerinde aktif olarak görev aldı. Edremit Mesleki Eğitim Merkezi'nden Motorlu Araç Teknolojisi dalında ustalık belgesine sahiptir. Edremit Merkez Pilot Garage'da motor, kaporta, boya ve onarım incelemelerinden sorumludur.",
+      "image": "/gallery/atolye-07.jpg",
+      "experience": "MEB Ustalık Belgeli",
+      "specialty": "Motor · Kaporta · Boya · Onarım",
+      "origin": "Gaziantep doğumlu, Edremit'te çalışıyor",
+      "careerBrands": ["Toyota", "Volkswagen"],
+      "credentials": [
+        {
+          "label": "Yetkili Servis Geçmişi",
+          "issuer": "Toyota · Volkswagen Yetkili Servisleri",
+          "year": "Uzun yıl",
+          "field": "Aktif ustalık dönemi",
+          "tag": "YS"
+        },
+        {
+          "label": "Ustalık Belgesi",
+          "issuer": "Edremit Mesleki Eğitim Merkezi · MEB",
+          "year": "2025",
+          "field": "Motorlu Araç Teknolojisi",
+          "tag": "ML"
+        },
+        {
+          "label": "Kalfalık Belgesi",
+          "issuer": "Edremit Mesleki Eğitim Merkezi · MEB",
+          "year": "2022",
+          "field": "Motorlu Araç Onarım & Kaynak",
+          "tag": "KL"
+        },
+        {
+          "label": "Kaporta STEP 1",
+          "issuer": "Toyota Türkiye Eğitim Müdürlüğü",
+          "year": "2024",
+          "field": "Kurumsal Eğitim",
+          "tag": "TY"
+        }
+      ]
+    }
+  ]
+}

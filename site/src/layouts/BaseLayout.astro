@@ -1,0 +1,63 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import SchemaOrg from '../components/SchemaOrg.astro';
+import business from '../data/business.json';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const { title, description = business.shortDescription, ogImage = '/images/dis-gorunum.jpeg' } = Astro.props;
+const fullTitle = title.includes(business.name) ? title : `${title} | ${business.name}`;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://otoekspertizedremit.com').toString().replace(/\/$/, '') || (Astro.site?.toString() ?? 'https://otoekspertizedremit.com');
+const ogImageAbsolute = new URL(ogImage, Astro.site ?? 'https://otoekspertizedremit.com').toString();
+---
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/jpeg" href="/images/logo.jpeg" />
+    <link rel="apple-touch-icon" href="/images/logo.jpeg" />
+    <link rel="canonical" href={canonical} />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#dc2626" />
+    <meta name="author" content={business.name} />
+    <meta name="geo.region" content="TR-10" />
+    <meta name="geo.placename" content={business.city} />
+    <meta name="geo.position" content={`${business.geo.latitude};${business.geo.longitude}`} />
+    <meta name="ICBM" content={`${business.geo.latitude}, ${business.geo.longitude}`} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Anton&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Anton&display=swap" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageAbsolute} />
+    <meta property="og:image:alt" content={`${business.name} — Oto Ekspertiz Merkezi`} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:site_name" content={business.name} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageAbsolute} />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
+    <SchemaOrg />
+  </head>
+  <body class="bg-white text-zinc-900 antialiased pb-16 md:pb-0">
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <StickyCTA />
+  </body>
+</html>

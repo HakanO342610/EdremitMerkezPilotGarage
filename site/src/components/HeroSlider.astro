@@ -1,0 +1,117 @@
+---
+import business from '../data/business.json';
+
+const waUrl = `https://wa.me/${business.whatsapp.replace('+','')}?text=${encodeURIComponent(business.whatsappMessage)}`;
+const slides = business.slogans;
+---
+<section class="relative isolate overflow-hidden text-white bg-red-600">
+  <div class="hero-section relative h-[580px] sm:h-[660px] lg:h-[740px]">
+
+    <video
+      id="hero-video"
+      class="absolute inset-x-2 sm:inset-x-10 inset-y-2 sm:inset-y-6 w-[calc(100%-1rem)] sm:w-[calc(100%-5rem)] h-[calc(100%-1rem)] sm:h-[calc(100%-3rem)] object-cover rounded-md sm:rounded-lg"
+      autoplay
+      muted
+      loop
+      playsinline
+      webkit-playsinline="true"
+      x5-playsinline="true"
+      disablepictureinpicture
+      disableremoteplayback
+      preload="auto"
+      poster="/gallery/ekspertiz-01.jpg"
+      aria-hidden="true"
+    >
+      <source src="/videos/hero.mp4" type="video/mp4" />
+    </video>
+
+    <div class="absolute inset-x-2 sm:inset-x-10 inset-y-2 sm:inset-y-6 bg-gradient-to-r from-zinc-900/85 via-zinc-900/40 to-zinc-900/10 rounded-md sm:rounded-lg pointer-events-none"></div>
+    <div class="absolute inset-x-2 sm:inset-x-10 inset-y-2 sm:inset-y-6 bg-gradient-to-t from-zinc-900/90 via-transparent to-zinc-900/30 rounded-md sm:rounded-lg pointer-events-none"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 h-full flex items-center">
+      <div class="w-full max-w-2xl">
+        <div class="flex flex-wrap items-center gap-2 mb-4">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-red-600 text-white text-[11px] sm:text-xs font-black uppercase tracking-[0.2em] rounded-sm shadow-lg shadow-red-600/40 border border-red-400/30">
+            ★ {business.branchLabel}
+          </div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-red-600/30 backdrop-blur text-red-100 text-[11px] sm:text-xs font-semibold rounded-full border border-red-500/40">
+            <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+            TSE BELGELİ · UV BOYA TESPİT
+          </div>
+        </div>
+
+        <h1 class="sr-only">{business.h1Name} — Oto Ekspertiz Merkezi · TSE Belgeli</h1>
+        <div class="font-display text-[2.25rem] sm:text-6xl lg:text-8xl font-bold tracking-tighter leading-[0.95]" aria-hidden="true">
+          <span class="block text-3d-chrome">{business.name}</span>
+          <span class="block text-3d-red text-lg sm:text-3xl lg:text-5xl font-bold mt-2 sm:mt-3 uppercase tracking-wide">Oto Ekspertiz Merkezi</span>
+        </div>
+
+        <div class="hero-text-stack relative min-h-[110px] sm:min-h-[130px] mt-7">
+          {slides.map((slide, i) => (
+            <div class="hero-text absolute inset-0 transition-all duration-1000 ease-in-out" data-index={i}>
+              <h2 class="font-display text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight leading-tight text-white" style="text-shadow: 0 2px 0 rgba(0,0,0,0.5), 0 4px 14px rgba(0,0,0,0.6);">
+                {slide.title}
+              </h2>
+              <p class="mt-3 text-base sm:text-lg text-zinc-200 leading-relaxed max-w-xl" style="text-shadow: 0 1px 3px rgba(0,0,0,0.7);">
+                {slide.subtitle}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl">
+          <a href={`tel:${business.phoneE164}`} class="inline-flex items-center justify-center gap-2 px-4 py-3.5 bg-red-600 hover:bg-red-700 text-white font-semibold text-sm sm:text-[15px] rounded-md transition-colors shadow-xl shadow-red-600/40 whitespace-nowrap">
+            📞 Hemen Ara
+          </a>
+          <a href={waUrl} target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-4 py-3.5 bg-green-600 hover:bg-green-700 text-white font-semibold text-sm sm:text-[15px] rounded-md transition-colors shadow-lg shadow-green-600/40 whitespace-nowrap">
+            💬 WhatsApp
+          </a>
+          <a href={`https://www.google.com/maps/dir/?api=1&destination=${business.geo.latitude},${business.geo.longitude}`} target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-4 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm sm:text-[15px] rounded-md transition-colors shadow-lg shadow-blue-600/40 whitespace-nowrap">
+            📍 Yol Tarifi
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-zinc-950 to-transparent pointer-events-none"></div>
+  </div>
+</section>
+
+<style>
+  .hero-text { opacity: 0; transform: translateY(12px); pointer-events: none; }
+  .hero-text[data-active="true"] { opacity: 1; transform: translateY(0); pointer-events: auto; }
+</style>
+
+<script>
+  const section = document.querySelector('.hero-section');
+  if (section) {
+    const texts = section.querySelectorAll<HTMLElement>('.hero-text');
+    let current = 0;
+    const apply = (idx: number) => {
+      texts.forEach((t, i) => t.dataset.active = i === idx ? 'true' : 'false');
+    };
+    apply(0);
+    setInterval(() => {
+      current = (current + 1) % texts.length;
+      apply(current);
+    }, 4500);
+  }
+
+  const video = document.getElementById('hero-video') as HTMLVideoElement | null;
+  if (video) {
+    video.muted = true;
+    video.setAttribute('muted', '');
+    const tryPlay = () => {
+      const p = video.play();
+      if (p && typeof p.catch === 'function') p.catch(() => {});
+    };
+    if (video.readyState >= 2) tryPlay();
+    video.addEventListener('loadeddata', tryPlay);
+    video.addEventListener('canplay', tryPlay);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay(); });
+    ['touchstart','click','scroll'].forEach(ev => {
+      window.addEventListener(ev, tryPlay, { once: true, passive: true });
+    });
+  }
+</script>

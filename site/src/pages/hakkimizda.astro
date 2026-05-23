@@ -1,0 +1,421 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import business from '../data/business.json';
+
+const waUrl = `https://wa.me/${business.whatsapp.replace('+','')}?text=${encodeURIComponent(business.whatsappMessage)}`;
+
+const atelierGrid = [
+  { src: '/gallery/atolye-03.jpg', label: 'Servis Sahası',     plate: 'N°01', tall: true },
+  { src: '/gallery/atolye-07.jpg', label: 'UV Tespit Hattı',   plate: 'N°02' },
+  { src: '/gallery/atolye-11.jpg', label: 'OBD Teşhis İstasyonu', plate: 'N°03' },
+  { src: '/gallery/atolye-05.jpg', label: 'Dyno Performans',   plate: 'N°04' },
+  { src: '/gallery/atolye-14.jpg', label: 'Kaporta Tarama',    plate: 'N°05' },
+];
+
+const journey = [
+  {
+    step: '01',
+    title: 'Karşılama & Kayıt',
+    body: 'Aracınızın şasi numarası, ruhsat bilgileri ve hizmet paketi seçimi. Süreç başlamadan önce her şey kayda alınır.',
+    image: '/gallery/ekspertiz-01.jpg',
+    tag: 'İlk 5 dakika',
+  },
+  {
+    step: '02',
+    title: 'Mekanik & Performans',
+    body: 'Dyno motor testi, OBD elektronik tarama, fren ve süspansiyon platformları. Aracın iskeleti ve ruhu masada.',
+    image: '/gallery/ekspertiz-04.jpg',
+    tag: 'Teknik analiz',
+  },
+  {
+    step: '03',
+    title: 'Boya & Kaporta',
+    body: 'UV boya altı tespit ışığı, mikron ölçer ve görsel inceleme. Gözle görülmeyen onarımlar burada kayıt altına alınır.',
+    image: '/gallery/ekspertiz-07.jpg',
+    tag: 'Bölgede sadece bizde',
+  },
+  {
+    step: '04',
+    title: 'TSE Belgeli Rapor',
+    body: 'Tüm bulgular fotoğraflarla birlikte tek bir resmî raporda. Hem dijital hem matbu — alıcı ve satıcı için referans.',
+    image: '/gallery/ekspertiz-09.jpg',
+    tag: 'Teslimde elinizde',
+  },
+];
+
+const team = business.team ?? [];
+const lead = team[0];
+const rest = team.slice(1);
+---
+<BaseLayout title="Hakkımızda" description="Edremit Merkez Pilot Garage, TSE belgeli oto ekspertiz merkezi. Edremit 5. Noterliği karşısında modern cihazlarla 648 nokta detaylı araç inceleme hizmeti.">
+
+  {/* ───────── HERO — sade kurumsal (Ekibimiz tarzı) ───────── */}
+  <section class="bg-white border-b border-zinc-200">
+    <div class="max-w-6xl mx-auto px-6 py-14 sm:py-20">
+      <div class="text-[11px] uppercase tracking-[0.22em] text-red-600 font-semibold mb-3">Hakkımızda</div>
+      <h1 class="font-display text-3xl sm:text-5xl font-bold text-zinc-900 tracking-tight leading-tight">
+        Edremit'in <span class="text-red-600">TSE belgeli</span> oto ekspertiz merkezi.
+      </h1>
+      <p class="mt-5 text-base sm:text-lg text-zinc-600 max-w-3xl leading-relaxed">
+        Edremit Merkez Pilot Garage, 5. Noterliğin tam karşısında. Modern cihazlar, uzman teknisyenler ve şeffaf raporlama anlayışıyla 648 noktada detaylı araç inceleme hizmeti.
+      </p>
+    </div>
+  </section>
+
+  {/* ───────── OPENING — DROP CAP EDITORIAL + ASİMETRİK STATS ───────── */}
+  <section class="bg-stone-50 text-zinc-900 border-b border-zinc-200">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 sm:py-28">
+
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+
+        {/* Sol: drop cap editorial metin */}
+        <div class="lg:col-span-7">
+          <div class="flex items-center gap-3 text-[10px] uppercase tracking-[0.28em] text-red-700 font-semibold mb-6">
+            <span class="font-numeric text-red-600 text-base">01</span>
+            <span class="editorial-rule w-12 text-red-200"></span>
+            Hikayemiz
+          </div>
+
+          <h2 class="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-[-0.035em] leading-[0.92] text-zinc-900">
+            Edremit'te <span class="italic font-semibold text-red-600">güvenin</span> adresi.
+          </h2>
+
+          <div class="mt-10 max-w-2xl">
+            <p class="drop-cap text-lg sm:text-xl leading-[1.6] text-zinc-800">
+              Edremit Merkez Pilot Garage, Türkiye'nin köklü oto ekspertiz markası Pilot Garage'ın <strong>MERKEZ bayisi</strong> olarak hizmet veriyor. Edremit 5. Noterliği'nin <strong>tam karşısında</strong> konumlandığımız tesisimizde; modern cihazlarımız, uzman teknisyenlerimiz ve şeffaf raporlama anlayışımızla, ikinci el araç alım‑satım sürecinin her iki tarafına da nefes aldırıyoruz.
+            </p>
+            <p class="mt-6 text-base text-zinc-600 leading-relaxed pl-1">
+              Bölgemizde <strong class="text-zinc-900">5.0 Google yıldızı</strong> ile en yüksek puanlı ekspertiz merkeziyiz. 400'ü aşkın memnun müşteri yorumu, ortaya koyduğumuz özenin en güzel kanıtı.
+            </p>
+          </div>
+        </div>
+
+        {/* Sağ: asimetrik stats — büyük rakam + 3 küçük */}
+        <div class="lg:col-span-5">
+          <div class="bg-white border border-zinc-200 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.25)] rounded-sm overflow-hidden">
+
+            {/* Üst — büyük stat */}
+            <div class="relative p-6 sm:p-10 border-b border-zinc-200 bg-gradient-to-br from-white to-stone-50">
+              <div class="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-semibold mb-2">Toplam İnceleme Noktası</div>
+              <div class="font-numeric text-[7rem] sm:text-[9rem] leading-[0.82] text-3d-stat">648</div>
+              <div class="mt-3 text-sm text-zinc-600 max-w-xs">
+                Black Box paketinde aracın her milimetrekaresi tek tek kontrol edilir — sektörde en kapsamlı protokol.
+              </div>
+              <div class="absolute top-6 right-6 text-[10px] font-numeric text-zinc-400">FIG. 01</div>
+            </div>
+
+            {/* Alt — 3'lü stat ızgarası */}
+            <div class="grid grid-cols-3 divide-x divide-zinc-200">
+              <div class="p-5 sm:p-6 text-center">
+                <div class="font-numeric text-3xl sm:text-4xl text-zinc-900 leading-none">5.0<span class="text-yellow-500 ml-0.5">★</span></div>
+                <div class="text-[9px] sm:text-[10px] uppercase tracking-[0.22em] text-zinc-500 mt-2 font-semibold">Google Puanı</div>
+              </div>
+              <div class="p-5 sm:p-6 text-center bg-stone-50">
+                <div class="font-numeric text-3xl sm:text-4xl text-red-600 leading-none">400<span class="text-zinc-400 text-xl">+</span></div>
+                <div class="text-[9px] sm:text-[10px] uppercase tracking-[0.22em] text-zinc-500 mt-2 font-semibold">Yorum</div>
+              </div>
+              <div class="p-5 sm:p-6 text-center">
+                <div class="font-numeric text-3xl sm:text-4xl text-zinc-900 leading-none">1<span class="text-base text-zinc-500 ml-1 font-display">dk</span></div>
+                <div class="text-[9px] sm:text-[10px] uppercase tracking-[0.22em] text-zinc-500 mt-2 font-semibold">Notere Mesafe</div>
+              </div>
+            </div>
+
+            {/* En alt — TSE bandı */}
+            <div class="bg-zinc-950 text-white px-6 py-4 flex items-center justify-between">
+              <div class="font-display text-sm font-bold tracking-wide">TSE BELGELİ</div>
+              <div class="text-[10px] uppercase tracking-[0.25em] text-zinc-400">Resmî · Geçerli · Şeffaf</div>
+            </div>
+          </div>
+
+          {/* İç mekan görseli — küçük ek vurgu */}
+          <div class="mt-6 relative photo-frame rounded-sm overflow-hidden border border-zinc-200">
+            <img src="/images/ic-mekan.jpeg" alt="Edremit Merkez Pilot Garage iç mekan" class="w-full h-56 sm:h-64 object-cover" loading="lazy" />
+            <div class="absolute bottom-4 left-4 z-10 text-white">
+              <div class="text-[9px] uppercase tracking-[0.3em] text-zinc-200">Plaka 5. Noter</div>
+              <div class="font-display font-bold text-lg">Merkez Şubemiz</div>
+            </div>
+            <div class="absolute top-4 right-4 z-10 bg-red-600 text-white px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] rounded-sm">
+              MERKEZ
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {/* ───────── ATELIER — ATÖLYE GERÇEKLİĞİ EDITORIAL GRID ───────── */}
+  <section class="bg-zinc-950 text-white relative overflow-hidden grain">
+    <div class="absolute inset-0 diagonal-stripes opacity-40"></div>
+
+    <div class="relative max-w-7xl mx-auto px-5 sm:px-8 py-20 sm:py-28">
+
+      <div class="grid lg:grid-cols-12 gap-8 mb-12 sm:mb-16">
+        <div class="lg:col-span-5">
+          <div class="flex items-center gap-3 text-[10px] uppercase tracking-[0.28em] text-red-400 font-semibold mb-5">
+            <span class="font-numeric text-red-500 text-base">02</span>
+            <span class="editorial-rule w-12 text-red-900"></span>
+            Atölyemizden
+          </div>
+          <h2 class="font-display text-4xl sm:text-6xl font-bold tracking-[-0.035em] leading-[0.9]">
+            <span class="text-3d-chrome">Sahanın</span>
+            <span class="block text-zinc-400 italic font-semibold">içinden.</span>
+          </h2>
+        </div>
+        <div class="lg:col-span-6 lg:col-start-7 lg:pl-8 lg:border-l lg:border-zinc-800 flex items-end">
+          <p class="text-base sm:text-lg text-zinc-400 leading-relaxed">
+            Ekspertiz bir laboratuvar işidir. Düzgün ışık, kalibre edilmiş cihazlar, temiz zemin —
+            <strong class="text-white">her detay bilinçli bir tercih.</strong> Aşağıda atölyemizin gerçek hâli.
+          </p>
+        </div>
+      </div>
+
+      {/* Asimetrik foto ızgarası — sol büyük + sağ 2x2 */}
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 auto-rows-[180px] sm:auto-rows-[220px]">
+        {atelierGrid.map((p, i) => (
+          <figure class={`relative photo-frame rounded-sm overflow-hidden bg-zinc-900 border border-zinc-800/80 group ${p.tall ? 'col-span-2 row-span-2 lg:col-span-2 lg:row-span-2' : ''}`}>
+            <img src={p.src} alt={p.label} class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" loading="lazy" />
+            <figcaption class="absolute bottom-3 left-3 right-3 z-10 flex items-end justify-between gap-3">
+              <span class="font-display font-bold text-white text-sm sm:text-base">{p.label}</span>
+              <span class="font-numeric text-red-300 text-xs sm:text-sm">{p.plate}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+
+      {/* Ekipman listesi — magazine list */}
+      <div class="mt-14 sm:mt-20 grid lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-3">
+          <div class="text-[10px] uppercase tracking-[0.28em] text-zinc-500 font-semibold mb-3">Cihazlarımız</div>
+          <h3 class="font-display text-2xl sm:text-3xl font-bold leading-tight text-white">
+            Modern cihaz altyapısı.
+          </h3>
+        </div>
+        <ul class="lg:col-span-9 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4">
+          {business.keyEquipment.map((item, i) => (
+            <li class="flex items-baseline gap-4 border-b border-zinc-800/80 pb-3">
+              <span class="font-numeric text-red-500 text-sm leading-none w-7 shrink-0">0{i+1}</span>
+              <span class="font-display text-sm sm:text-base text-zinc-200">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  {/* ───────── PROCESS / JOURNEY — ALTERNATING TIMELINE ───────── */}
+  <section class="bg-stone-50 text-zinc-900">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 sm:py-28">
+
+      <div class="grid lg:grid-cols-12 gap-8 mb-12 sm:mb-20">
+        <div class="lg:col-span-7">
+          <div class="flex items-center gap-3 text-[10px] uppercase tracking-[0.28em] text-red-700 font-semibold mb-5">
+            <span class="font-numeric text-red-600 text-base">03</span>
+            <span class="editorial-rule w-12 text-red-200"></span>
+            Süreç
+          </div>
+          <h2 class="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-[-0.035em] leading-[0.9] text-zinc-900">
+            Bir aracın <span class="italic font-semibold text-red-600">yolculuğu.</span>
+          </h2>
+        </div>
+        <div class="lg:col-span-4 lg:col-start-9 flex items-end">
+          <p class="text-zinc-600 leading-relaxed">
+            Kapımızdan giren her araç dört aşamadan geçer.
+            Her aşama belgelenir, fotoğraflanır, raporlanır.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-16 sm:space-y-24">
+        {journey.map((j, i) => (
+          <div class={`grid lg:grid-cols-12 gap-6 sm:gap-10 items-center ${i % 2 === 1 ? 'lg:[&>div:first-child]:order-2' : ''}`}>
+            {/* Foto */}
+            <div class="lg:col-span-7">
+              <figure class="relative photo-frame rounded-sm overflow-hidden bg-zinc-200 aspect-[4/3] sm:aspect-[16/10] shadow-[0_40px_80px_-40px_rgba(0,0,0,0.4)] border border-zinc-300">
+                <img src={j.image} alt={j.title} class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                <div class="absolute top-4 left-4 z-10 bg-white/95 backdrop-blur px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-red-700 rounded-sm">
+                  {j.tag}
+                </div>
+                <div class="absolute bottom-4 right-4 z-10 font-numeric text-white text-2xl">FIG. 0{i+2}</div>
+              </figure>
+            </div>
+
+            {/* Metin */}
+            <div class="lg:col-span-5">
+              <div class="flex items-baseline gap-5">
+                <span class="font-numeric text-[5rem] sm:text-[7rem] leading-[0.8] text-red-600/15">{j.step}</span>
+                <div class="flex-1">
+                  <div class="text-[10px] uppercase tracking-[0.28em] text-zinc-500 font-semibold mb-2">Adım {j.step}</div>
+                  <h3 class="font-display text-3xl sm:text-4xl font-bold text-zinc-900 tracking-[-0.02em] leading-tight">{j.title}</h3>
+                </div>
+              </div>
+              <p class="mt-5 text-base sm:text-lg text-zinc-700 leading-[1.7] pl-1">{j.body}</p>
+              <div class="mt-6 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.25em] text-zinc-500 font-semibold">
+                <span class="w-8 h-px bg-red-500"></span>
+                Aşama {i+1} / {journey.length}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  {/* ───────── EKİP TEASER — sade beyaz + kırmızı, /ekibimiz'e yönlendiriyor ───────── */}
+  <section class="bg-white border-b border-zinc-200">
+    <div class="max-w-6xl mx-auto px-6 py-14 sm:py-20">
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+
+        {/* Sol — başlık + kısa metin + CTA */}
+        <div class="lg:col-span-7">
+          <div class="text-[11px] uppercase tracking-[0.22em] text-red-600 font-semibold mb-3">Ekibimiz</div>
+          <h2 class="font-display text-3xl sm:text-5xl font-bold text-zinc-900 tracking-tight leading-tight">
+            Aracınıza <span class="text-red-600">deneyimli ustalar</span> bakıyor.
+          </h2>
+          {lead && (
+            <p class="mt-5 text-base sm:text-lg text-zinc-600 leading-relaxed max-w-2xl">
+              Kıdemli ustamız <strong class="text-zinc-900">{lead.name}</strong>, Toyota ve Volkswagen yetkili servislerinde
+              uzun yıllar görev aldıktan sonra MEB ustalık belgesi ile ekibimizde. Tam profili ve sertifikaları aşağıda.
+            </p>
+          )}
+          <div class="mt-7 flex flex-wrap items-center gap-3">
+            <a href="/ekibimiz"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold tracking-wide rounded transition-colors">
+              Ekibimizi Tanıyın
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <span class="text-xs text-zinc-500 uppercase tracking-[0.18em] font-semibold">MEB Ustalık · Toyota & VW Tecrübesi</span>
+          </div>
+        </div>
+
+        {/* Sağ — küçük lead kart preview */}
+        {lead && (
+          <a href="/ekibimiz" class="lg:col-span-5 block group">
+            <div class="relative bg-stone-50 border border-zinc-200 rounded overflow-hidden shadow-sm hover:shadow-md hover:border-red-300 transition-all">
+              <div class="aspect-[5/3] overflow-hidden bg-zinc-200">
+                <img src={lead.image} alt={lead.name} loading="lazy"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div class="p-5">
+                <div class="text-[10px] uppercase tracking-[0.22em] text-red-600 font-semibold mb-1">Kıdemli Usta</div>
+                <div class="font-display text-xl font-bold text-zinc-900">{lead.name}</div>
+                <div class="text-sm text-zinc-600 mt-0.5">{lead.specialty}</div>
+                <div class="mt-3 flex items-center gap-2 text-xs text-red-600 font-semibold group-hover:gap-3 transition-all">
+                  Tam profil
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </a>
+        )}
+
+      </div>
+    </div>
+  </section>
+
+
+  {/* ───────── ŞEFFAF İŞLETME — KURUMSAL BİLGİLER (korundu, refined) ───────── */}
+  <section class="bg-stone-100 text-zinc-900 border-y border-zinc-200">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-20 sm:py-24">
+
+      <div class="flex items-center gap-3 text-[10px] uppercase tracking-[0.28em] text-zinc-600 font-semibold mb-5">
+        <span class="font-numeric text-red-600 text-base">05</span>
+        <span class="editorial-rule w-12 text-zinc-400"></span>
+        Kurumsal Bilgiler
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-5">
+          <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[0.95] text-zinc-900">
+            Şeffaf <span class="italic text-red-600">işletme,</span> şeffaf rapor.
+          </h2>
+          <p class="mt-5 text-zinc-600 leading-relaxed max-w-md">
+            Yasal işletme bilgilerimizi, sertifikalarımızı ve iletişim kanallarımızı tek bir yerden görüntüleyin.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7 bg-white border border-zinc-200 rounded-sm shadow-[0_30px_60px_-40px_rgba(0,0,0,0.25)] overflow-hidden">
+          <dl class="divide-y divide-zinc-200">
+            <div class="grid grid-cols-3 gap-4 px-6 py-5">
+              <dt class="font-display text-[10px] text-zinc-500 uppercase tracking-[0.22em] font-semibold">Ticari Marka</dt>
+              <dd class="col-span-2 font-display font-bold text-zinc-900">{business.name} <span class="text-red-600 text-sm font-normal">· Merkez</span></dd>
+            </div>
+            <div class="grid grid-cols-3 gap-4 px-6 py-5 bg-stone-50">
+              <dt class="font-display text-[10px] text-zinc-500 uppercase tracking-[0.22em] font-semibold">Yasal İşletme Sahibi</dt>
+              <dd class="col-span-2 font-display font-bold text-zinc-900 uppercase">{business.legalName}</dd>
+            </div>
+            <div class="grid grid-cols-3 gap-4 px-6 py-5">
+              <dt class="font-display text-[10px] text-zinc-500 uppercase tracking-[0.22em] font-semibold">Adres</dt>
+              <dd class="col-span-2 font-medium text-zinc-800">{business.addressLine}, {business.city} / {business.region}</dd>
+            </div>
+            <div class="grid grid-cols-3 gap-4 px-6 py-5 bg-stone-50">
+              <dt class="font-display text-[10px] text-zinc-500 uppercase tracking-[0.22em] font-semibold">Telefon</dt>
+              <dd class="col-span-2 font-medium text-zinc-800"><a href={`tel:${business.phoneE164}`} class="hover:text-red-600 transition-colors">{business.phone}</a></dd>
+            </div>
+            <div class="grid grid-cols-3 gap-4 px-6 py-5">
+              <dt class="font-display text-[10px] text-zinc-500 uppercase tracking-[0.22em] font-semibold">E-mail</dt>
+              <dd class="col-span-2 font-medium text-zinc-800 break-all"><a href={`mailto:${business.email}`} class="hover:text-red-600 transition-colors">{business.email}</a></dd>
+            </div>
+            <div class="grid grid-cols-3 gap-4 px-6 py-5 bg-stone-50">
+              <dt class="font-display text-[10px] text-zinc-500 uppercase tracking-[0.22em] font-semibold">Sertifika</dt>
+              <dd class="col-span-2 font-medium text-zinc-800">TSE Belgeli Oto Ekspertiz</dd>
+            </div>
+            <div class="grid grid-cols-3 gap-4 px-6 py-5">
+              <dt class="font-display text-[10px] text-zinc-500 uppercase tracking-[0.22em] font-semibold">Çalışma Saatleri</dt>
+              <dd class="col-span-2 font-medium text-zinc-800">Pzt – Cmt · 08:30 → 18:30</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  {/* ───────── CTA — REFINED EDITORIAL ───────── */}
+  <section class="relative bg-zinc-950 text-white overflow-hidden grain">
+    <div class="absolute inset-0 opacity-30" style="background: radial-gradient(ellipse at 50% 100%, #dc2626 0%, transparent 55%);"></div>
+
+    <div class="relative max-w-5xl mx-auto px-5 sm:px-8 py-20 sm:py-24 text-center">
+
+      <div class="flex items-center justify-center gap-3 text-[10px] uppercase tracking-[0.32em] text-zinc-400 font-semibold mb-8">
+        <span class="w-10 h-px bg-red-500"></span>
+        <span class="font-numeric text-red-500 text-base">06</span>
+        <span>Bir sonraki adım</span>
+        <span class="w-10 h-px bg-red-500"></span>
+      </div>
+
+      <h2 class="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-[-0.035em] leading-[0.9]">
+        <span class="text-3d-chrome">Aracınızı</span>
+        <span class="block italic text-red-400 font-semibold">bekliyoruz.</span>
+      </h2>
+
+      <p class="mt-7 text-lg text-zinc-300 max-w-xl mx-auto leading-relaxed">
+        <strong class="text-white">5 dakikada randevu</strong> oluşturuyoruz.
+        Bugün arayın, yarın net bir rapora sahip olun.
+      </p>
+
+      <div class="mt-10 flex flex-col sm:flex-row justify-center gap-3 max-w-lg mx-auto">
+        <a href={`tel:${business.phoneE164}`} class="flex-1 inline-flex items-center justify-center gap-2 px-6 py-4 bg-red-600 hover:bg-red-700 text-white font-display font-bold tracking-wide rounded-sm transition-colors shadow-xl shadow-red-600/40">
+          📞 {business.phone}
+        </a>
+        <a href={waUrl} target="_blank" rel="noopener" class="flex-1 inline-flex items-center justify-center gap-2 px-6 py-4 bg-zinc-100 hover:bg-white text-zinc-900 font-display font-bold tracking-wide rounded-sm transition-colors shadow-lg">
+          💬 WhatsApp
+        </a>
+      </div>
+
+      <div class="mt-12 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.3em] text-zinc-500">
+        <span class="font-numeric text-red-500">◆</span>
+        Edremit Merkez Pilot Garage · Merkez Şubesi
+        <span class="font-numeric text-red-500">◆</span>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,47 @@
+# ---- Dependencies ----
+node_modules/
+
+# ---- Build output ----
+dist/
+.astro/
+.cache/
+.output/
+.vercel/
+
+# ---- Environment & secrets ----
+.env
+.env.local
+.env.*.local
+*.pem
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# ---- IDE ----
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---- Source content (lokal kalır, site/public/ üzerinden optimize hâli commitli) ----
+yeni-site-icerik/
+
+# ---- Eski WordPress yedekleri (lokal arşiv) ----
+backups/
+
+# ---- Claude memory backup (paylaşılmaz) ----
+memory-backup/
+
+# ---- Logs ----
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---- Python (tmp scriptler) ----
+__pycache__/
+*.pyc
+*.pyo

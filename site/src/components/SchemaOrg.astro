@@ -1,0 +1,88 @@
+---
+import business from '../data/business.json';
+import packages from '../data/packages.json';
+
+const siteUrl = (Astro.site?.toString() ?? "https://otoekspertizedremit.com/").replace(/\/$/, "");
+const prices = packages.packages.map(p => parseInt(p.price.replace(/\./g, ""), 10)).filter(n => !isNaN(n));
+const minPrice = Math.min(...prices);
+const maxPrice = Math.max(...prices);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "AutomotiveBusiness",
+  "@id": siteUrl + "/#business",
+  "name": business.name,
+  "alternateName": "Pilot Garage Edremit",
+  "legalName": business.legalName,
+  "description": business.shortDescription,
+  "slogan": business.tagline,
+  "telephone": business.phoneE164,
+  "email": business.email,
+  "url": siteUrl,
+  "image": siteUrl + "/images/dis-gorunum.jpeg",
+  "logo": siteUrl + "/images/logo.jpeg",
+  "priceRange": `₺${minPrice.toLocaleString('tr-TR')} - ₺${maxPrice.toLocaleString('tr-TR')}`,
+  "currenciesAccepted": "TRY",
+  "paymentAccepted": "Cash, Credit Card",
+  "areaServed": [
+    { "@type": "City", "name": "Edremit" },
+    { "@type": "AdministrativeArea", "name": "Balıkesir" }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": business.addressLine,
+    "addressLocality": business.city,
+    "addressRegion": business.region,
+    "addressCountry": business.country
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": business.geo.latitude,
+    "longitude": business.geo.longitude
+  },
+  "openingHoursSpecification": business.openingHours.map(h => ({
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": h.days.map(d => ({
+      Mo: "Monday", Tu: "Tuesday", We: "Wednesday", Th: "Thursday",
+      Fr: "Friday", Sa: "Saturday", Su: "Sunday"
+    } as Record<string, string>)[d]),
+    "opens": h.opens,
+    "closes": h.closes
+  })),
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": business.rating.value,
+    "reviewCount": business.rating.count,
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Oto Ekspertiz Paketleri",
+    "itemListElement": packages.packages.map(p => ({
+      "@type": "Offer",
+      "name": p.name,
+      "description": p.description,
+      "price": p.price.replace(/\./g, ""),
+      "priceCurrency": "TRY",
+      "availability": "https://schema.org/InStock",
+      "itemOffered": {
+        "@type": "Service",
+        "name": p.name,
+        "description": p.description
+      }
+    }))
+  },
+  "knowsAbout": [
+    "Oto Ekspertiz", "TSE Belgeli Rapor", "648 Nokta İnceleme",
+    "UV Boya Tespit", "Motor Performans Testi", "Kaporta Kontrolü",
+    "Hava Yastığı Kontrolü", "OBD Elektronik Tarama"
+  ],
+  "sameAs": [
+    business.googleMapsUrl,
+    business.social?.instagram,
+    business.social?.youtube
+  ].filter(Boolean)
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
