@@ -139,15 +139,15 @@
     {
       "name": "Kazım TÜRKER",
       "role": "Usta · Motor · Kaporta & Onarım",
-      "bio": "Otomotiv sektöründe uzun yıllar ustalık yapmış, tecrübeli bir ustamız. Has Otomotiv Mercedes İstanbul yetkili servisinde 15 yıl iş tecrübesi kazanmış; ayrıca Toyota ve Volkswagen yetkili servislerinde aktif olarak görev aldı. Edremit Mesleki Eğitim Merkezi'nden Motorlu Araç Teknolojisi dalında ustalık belgesine sahiptir. Edremit Merkez Pilot Garage'da motor, kaporta, boya ve onarım incelemelerinden sorumludur.",
+      "bio": "Otomotiv sektöründe uzun yıllar ustalık yapmış, tecrübeli bir ustamız. Has Otomotiv Mercedes İstanbul yetkili servisinde 15 yıl, Volkswagen Edremit yetkili servisinde 6 yıl ve Toyota Edremit yetkili servisinde 5 yıl iş tecrübesi kazanmıştır. Edremit Mesleki Eğitim Merkezi'nden Motorlu Araç Teknolojisi dalında ustalık belgesine sahiptir. Edremit Merkez Pilot Garage'da motor, kaporta, boya ve onarım incelemelerinden sorumludur.",
       "image": "/gallery/atolye-07.jpg",
       "experience": "Has Otomotiv Mercedes İstanbul · 15 yıl iş tecrübesi",
       "specialty": "Motor · Kaporta · Boya · Onarım",
       "origin": "Gaziantep doğumlu, Edremit'te çalışıyor",
       "careerBrands": [
         "Mercedes-Benz",
-        "Toyota",
-        "Volkswagen"
+        "Volkswagen",
+        "Toyota"
       ],
       "credentials": [
         {
@@ -158,11 +158,18 @@
           "tag": "MB"
         },
         {
-          "label": "Yetkili Servis Geçmişi",
-          "issuer": "Toyota · Volkswagen Yetkili Servisleri",
-          "year": "Uzun yıl",
-          "field": "Aktif ustalık dönemi",
-          "tag": "YS"
+          "label": "Volkswagen Edremit Yetkili Servisi",
+          "issuer": "Volkswagen Yetkili Servisi · Edremit",
+          "year": "6 yıl",
+          "field": "Motor · Onarım iş tecrübesi",
+          "tag": "VW"
+        },
+        {
+          "label": "Toyota Edremit Yetkili Servisi",
+          "issuer": "Toyota Yetkili Servisi · Edremit",
+          "year": "5 yıl",
+          "field": "Motor · Onarım iş tecrübesi",
+          "tag": "TY"
         },
         {
           "label": "Ustalık Belgesi",
