@@ -139,16 +139,24 @@
     {
       "name": "Kazım TÜRKER",
       "role": "Usta · Motor · Kaporta & Onarım",
-      "bio": "Otomotiv sektöründe uzun yıllar ustalık yapmış, tecrübeli bir ustamız. Toyota ve Volkswagen yetkili servislerinde aktif olarak görev aldı. Edremit Mesleki Eğitim Merkezi'nden Motorlu Araç Teknolojisi dalında ustalık belgesine sahiptir. Edremit Merkez Pilot Garage'da motor, kaporta, boya ve onarım incelemelerinden sorumludur.",
+      "bio": "Otomotiv sektöründe uzun yıllar ustalık yapmış, tecrübeli bir ustamız. Mercedes İstanbul yetkili servisinde 15 yıl tecrübe kazanmış; ayrıca Toyota ve Volkswagen yetkili servislerinde aktif olarak görev aldı. Edremit Mesleki Eğitim Merkezi'nden Motorlu Araç Teknolojisi dalında ustalık belgesine sahiptir. Edremit Merkez Pilot Garage'da motor, kaporta, boya ve onarım incelemelerinden sorumludur.",
       "image": "/gallery/atolye-07.jpg",
-      "experience": "MEB Ustalık Belgeli",
+      "experience": "Mercedes İstanbul Servisi · 15 yıl tecrübe",
       "specialty": "Motor · Kaporta · Boya · Onarım",
       "origin": "Gaziantep doğumlu, Edremit'te çalışıyor",
       "careerBrands": [
+        "Mercedes-Benz",
         "Toyota",
         "Volkswagen"
       ],
       "credentials": [
+        {
+          "label": "Mercedes İstanbul Yetkili Servisi",
+          "issuer": "Mercedes-Benz Yetkili Servisi · İstanbul",
+          "year": "15 yıl",
+          "field": "Motor · Kaporta · Onarım tecrübesi",
+          "tag": "MB"
+        },
         {
           "label": "Yetkili Servis Geçmişi",
           "issuer": "Toyota · Volkswagen Yetkili Servisleri",

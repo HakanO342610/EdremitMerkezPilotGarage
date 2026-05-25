@@ -2,7 +2,9 @@
 import business from '../data/business.json';
 import reviewsData from '../data/reviews.json';
 
-const reviews = reviewsData.reviews;
+const reviews = [...reviewsData.reviews].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+);
 const tripled = [...reviews, ...reviews, ...reviews];
 ---
 <section class="bg-white py-16 sm:py-20 overflow-hidden">
