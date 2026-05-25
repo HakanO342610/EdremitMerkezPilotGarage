@@ -28,9 +28,22 @@
     "youtube": "https://www.youtube.com/@pilotgarageotoekspertizedremit"
   },
   "openingHours": [
-    {"days": ["Mo","Tu","We","Th","Fr","Sa"], "opens": "08:30", "closes": "18:30"}
+    {
+      "days": [
+        "Mo",
+        "Tu",
+        "We",
+        "Th",
+        "Fr",
+        "Sa"
+      ],
+      "opens": "08:30",
+      "closes": "18:30"
+    }
   ],
-  "certifications": ["TSE Belgeli"],
+  "certifications": [
+    "TSE Belgeli"
+  ],
   "stats": {
     "stars": 5.0,
     "reviews": 400,
@@ -130,7 +143,10 @@
       "experience": "MEB Ustalık Belgeli",
       "specialty": "Motor · Kaporta · Boya · Onarım",
       "origin": "Gaziantep doğumlu, Edremit'te çalışıyor",
-      "careerBrands": ["Toyota", "Volkswagen"],
+      "careerBrands": [
+        "Toyota",
+        "Volkswagen"
+      ],
       "credentials": [
         {
           "label": "Yetkili Servis Geçmişi",
@@ -161,6 +177,27 @@
           "tag": "TY"
         }
       ]
+    },
+    {
+      "name": "Ferda BİLGEN",
+      "role": "Müşteri İlişkileri Temsilcisi",
+      "bio": "Edremit Merkez Pilot Garage'da müşteri ilişkilerinden sorumlu. Randevu, müşteri karşılama ve iletişim süreçlerini yürütür.",
+      "image": "/gallery/atolye-08.jpg",
+      "experience": "Müşteri İlişkileri",
+      "specialty": "Randevu · Müşteri Karşılama · İletişim",
+      "credentials": []
+    },
+    {
+      "name": "Servet AKDURAN",
+      "role": "Teknisyen",
+      "bio": "Ford yetkili servisinde tecrübe kazanmış teknisyenimiz. Edremit Merkez Pilot Garage'da teknik inceleme ve onarım süreçlerinde görev alır.",
+      "image": "/gallery/atolye-09.jpg",
+      "experience": "Ford Yetkili Servis Tecrübeli",
+      "specialty": "Motor · Elektronik · Onarım",
+      "careerBrands": [
+        "Ford"
+      ],
+      "credentials": []
     }
   ]
 }

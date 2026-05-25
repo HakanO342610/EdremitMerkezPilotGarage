@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://otoekspertizedremit.com',
+  site: 'https://edremitekspertiz.com.tr',
   trailingSlash: 'never',
   vite: {
     plugins: [tailwindcss()]

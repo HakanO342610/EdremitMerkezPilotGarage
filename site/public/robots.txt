@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://otoekspertizedremit.com/sitemap.xml
+Sitemap: https://edremitekspertiz.com.tr/sitemap.xml
