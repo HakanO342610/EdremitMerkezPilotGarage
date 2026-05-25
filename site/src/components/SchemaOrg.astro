@@ -2,7 +2,7 @@
 import business from '../data/business.json';
 import packages from '../data/packages.json';
 
-const siteUrl = (Astro.site?.toString() ?? "https://edremitekspertiz.com.tr/").replace(/\/$/, "");
+const siteUrl = (Astro.site?.toString() ?? "https://www.edremitekspertiz.com.tr/").replace(/\/$/, "");
 const prices = packages.packages.map(p => parseInt(p.price.replace(/\./g, ""), 10)).filter(n => !isNaN(n));
 const minPrice = Math.min(...prices);
 const maxPrice = Math.max(...prices);

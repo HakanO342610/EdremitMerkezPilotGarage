@@ -14,8 +14,8 @@ interface Props {
 
 const { title, description = business.shortDescription, ogImage = '/images/dis-gorunum.jpeg' } = Astro.props;
 const fullTitle = title.includes(business.name) ? title : `${title} | ${business.name}`;
-const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://edremitekspertiz.com.tr').toString().replace(/\/$/, '') || (Astro.site?.toString() ?? 'https://edremitekspertiz.com.tr');
-const ogImageAbsolute = new URL(ogImage, Astro.site ?? 'https://edremitekspertiz.com.tr').toString();
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://www.edremitekspertiz.com.tr').toString().replace(/\/$/, '') || (Astro.site?.toString() ?? 'https://www.edremitekspertiz.com.tr');
+const ogImageAbsolute = new URL(ogImage, Astro.site ?? 'https://www.edremitekspertiz.com.tr').toString();
 ---
 <!doctype html>
 <html lang="tr">
