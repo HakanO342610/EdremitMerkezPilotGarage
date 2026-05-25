@@ -40,11 +40,11 @@ const slides = business.slogans;
           </div>
         </div>
 
-        <h1 class="sr-only">{business.h1Name} — Oto Ekspertiz Merkezi · TSE Belgeli</h1>
-        <div class="font-display text-[2.25rem] sm:text-6xl lg:text-8xl font-bold tracking-tighter leading-[0.95]" aria-hidden="true">
-          <span class="block text-3d-chrome">{business.name}</span>
-          <span class="block text-3d-red text-lg sm:text-3xl lg:text-5xl font-bold mt-2 sm:mt-3 uppercase tracking-wide">Oto Ekspertiz Merkezi</span>
-        </div>
+        <h1 class="font-display tracking-tighter leading-[0.95]">
+          <span class="block text-[10px] sm:text-xs font-semibold uppercase tracking-[0.3em] text-red-200/80 mb-3">{business.name}</span>
+          <span class="block text-[2.25rem] sm:text-6xl lg:text-8xl font-bold text-3d-chrome">{business.displayName}</span>
+          <span class="block text-lg sm:text-3xl lg:text-5xl font-bold mt-2 sm:mt-3 uppercase tracking-wide text-3d-red">Oto Ekspertiz Merkezi</span>
+        </h1>
 
         <div class="hero-text-stack relative min-h-[110px] sm:min-h-[130px] mt-7">
           {slides.map((slide, i) => (

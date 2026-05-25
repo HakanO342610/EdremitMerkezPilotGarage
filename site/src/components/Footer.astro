@@ -26,7 +26,7 @@ const nav = [
     <div class="lg:col-span-1">
       <div class="flex items-center gap-3 mb-3">
         <img src="/images/logo.jpeg" alt="" class="h-12 w-12 rounded-md object-cover" width="48" height="48" />
-        <div class="font-bold text-white text-lg leading-tight">{business.name}</div>
+        <div class="font-bold text-white text-lg leading-tight">{business.displayName}</div>
       </div>
       <p class="text-sm leading-relaxed text-zinc-400">{business.shortDescription}</p>
       <div class="mt-4 flex flex-wrap gap-1.5">
@@ -77,7 +77,7 @@ const nav = [
 
   <div class="border-t border-zinc-800">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 text-xs text-zinc-500 flex flex-col sm:flex-row sm:justify-between gap-1">
-      <span>© {year} {business.name} · Tüm hakları saklıdır.</span>
+      <span>© {year} {business.displayName} · Tüm hakları saklıdır.</span>
       <span>Yasal İşletme Sahibi: {business.legalName}</span>
     </div>
   </div>
