@@ -1,10 +1,10 @@
 ---
 const atolye = Array.from({ length: 15 }, (_, i) => `/gallery/atolye-${String(i + 1).padStart(2, '0')}.jpg`);
-const ekspertiz = Array.from({ length: 10 }, (_, i) => `/gallery/ekspertiz-${String(i + 1).padStart(2, '0')}.jpg`);
+const ekspertiz = Array.from({ length: 12 }, (_, i) => `/gallery/ekspertiz-${String(i + 1).padStart(2, '0')}.jpg`);
 const ekip = Array.from({ length: 5 }, (_, i) => `/gallery/ekip-${String(i + 1).padStart(2, '0')}.jpg`);
 
-const row1 = [...atolye.slice(0, 8), ...ekspertiz.slice(0, 4)];
-const row2 = [...ekspertiz.slice(4, 10), ...atolye.slice(8, 15), ...ekip];
+const row1 = [...atolye.slice(0, 8), ...ekspertiz.slice(0, 5)];
+const row2 = [...ekspertiz.slice(5, 12), ...atolye.slice(8, 15), ...ekip];
 
 const doubled1 = [...row1, ...row1];
 const doubled2 = [...row2, ...row2];
