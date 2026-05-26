@@ -10,7 +10,7 @@ import business from '../data/business.json';
 
 const waUrl = `https://wa.me/${business.whatsapp.replace('+','')}?text=${encodeURIComponent(business.whatsappMessage)}`;
 ---
-<BaseLayout title={`${business.name} | ${business.displayName} · TSE Belgeli · UV Boya Tespit`}>
+<BaseLayout title={`${business.displayName} · TSE Belgeli · UV Boya Tespit`}>
 
   <HeroSlider />
 
