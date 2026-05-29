@@ -59,6 +59,31 @@ html, body {
     0 -1px 0 rgba(0,0,0,0.45);
 }
 
+/* ─── Menu 3D — kabartmalı, hover'da dramatik ─── */
+.menu-3d {
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.8),
+    0 2px 0 rgba(0,0,0,0.06),
+    0 3px 0 rgba(0,0,0,0.04),
+    0 4px 6px rgba(0,0,0,0.18),
+    0 6px 12px rgba(0,0,0,0.08);
+}
+.menu-3d:hover {
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.95),
+    0 2px 0 rgba(220,38,38,0.25),
+    0 3px 0 rgba(127,29,29,0.18),
+    0 5px 10px rgba(220,38,38,0.35),
+    0 10px 20px rgba(0,0,0,0.18);
+}
+.menu-3d-active {
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.9),
+    0 2px 0 rgba(220,38,38,0.22),
+    0 3px 0 rgba(127,29,29,0.15),
+    0 4px 8px rgba(220,38,38,0.28);
+}
+
 .heading-stroke {
   -webkit-text-stroke: 1px rgba(255,255,255,0.08);
 }
